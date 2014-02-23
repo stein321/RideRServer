@@ -24,7 +24,8 @@ class EventMembers{
 			$call=$this->facebook->api('/'.$this->eid.'/attending/');
 			$members=$call['data'];
 			$next=$call['paging']['next'];
-			echo $next;
+			$next_call=$this->parse_next_string($next);
+			echo $next_call;
 			// while(  $next != null ) {
 			// 	$call=$this->facebook->api($next);
 			// 	$members=array_merge( $members,$call['paging']['next'] );
@@ -32,7 +33,11 @@ class EventMembers{
 			// }
 			return $members;
 	}
+	public function parse_next_string($next) {
+		$next_call=substr($next,26);
+		return $next_call;
 
+	}
 	// public function process_event_members($event_members) {
 	// 	foreach ($event_members as $key => $member) {
 	// 		//going to be a query

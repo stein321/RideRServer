@@ -22,6 +22,7 @@ class EventMembers{
 	}
 	public function get_all_event_members() {
 			$next_call=null;
+			$next = null;
 			$call=$this->facebook->api('/'.$this->eid.'/attending/');
 			$members=$call['data'];
 			$next=$call['paging']['next'];

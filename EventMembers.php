@@ -16,7 +16,7 @@ class EventMembers{
 				'appId' => $this->app_id,
 			     'secret' => $this->secret_key,
 			     'file_upload' => false,
-			     'allowSignedRequest' => true,
+			     'allowSignedRequest' => false,
 			);
 			$this->facebook=new facebook($config);
 	}

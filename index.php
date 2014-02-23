@@ -20,4 +20,4 @@ $members=$event->get_all_event_members();
 $mutual_friend=new FindMutualFriends($members);
 $friends_array=$mutual_friend->find_mutual_friends();
 usort($friends_array, $mutual_friend->cmp);
-var_dump($friends_array);
+echo json_encode($friend_array);

@@ -24,23 +24,18 @@ class FindMutualFriends {
 			$this->friend_array=array();
 	}
 	public function find_mutual_friends() {
-				var_dump($this->facebook->getUser());
 
-		// foreach ($this->members as $key => $member) {
-		// 		var_dump($this->facebook->getUser());
-		// 	// if ($member['id'] != $this->facebook->getUser())
-		// 	// {
-		// 	// 	$call=$this->facebook->api('/me/mutualfriends/'.$member['id']);
-		// 	// 	var_dump($call);
-		// 	// }
-		// 	// if($call) {
-		// 	// 	$count=count($call);
-		// 	// 	if($count>0) {
-		// 	// 		echo $count;
-		// 	// 	}
-		// 	// 	// var_dump($call);
-		// 	// }
-		// }
+		foreach ($this->members as $key => $member) {
+				$call=$this->facebook->api('/me/mutualfriends/'.$member['id']);
+				var_dump($call);
+			// if($call) {
+			// 	$count=count($call);
+			// 	if($count>0) {
+			// 		echo $count;
+			// 	}
+			// 	// var_dump($call);
+			// }
+		}
 
 	}
 

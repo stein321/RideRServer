@@ -13,8 +13,8 @@ class FindMutualFriends {
 	public function __construct($members) {
 		$this->members=$members;
 		$this->secret_key="f57c5b006bae8c63bc170578bd582589";
-			$this->app_id="436860186416914";
-			$this->eid=$event_id;
+		$this->app_id="436860186416914";
+		$this->eid=$event_id;
 			$config=array(
 				'appId' => $this->app_id,
 			     'secret' => $this->secret_key,
@@ -22,7 +22,7 @@ class FindMutualFriends {
 			     'allowSignedRequest' => true,
 			);
 			$this->facebook=new facebook($config);
-			$friend_array=[];
+			$this->friend_array=[];
 	}
 	public function find_mutual_friends() {
 

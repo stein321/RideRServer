@@ -12,8 +12,8 @@ class Get_Friends{
 	private $friend_ids;
 
 	public function __construct($id){
-			$this->secret_key="f57c5b006bae8c63bc170578bd582589";
-			$this->app_id="436860186416914";
+			$this->secret_key="fe3a9c260de6710b79449236504136ea";
+			$this->app_id="1469715466577879";
 			$this->$id=$id;
 			echo $id;
 			$config=array(

@@ -31,7 +31,7 @@ class FindMutualFriends {
 			if($call) {
 				$count=count($call);
 				if($count>0) {
-					echo $count;
+					echo $count." ";
 				}
 				// var_dump($call);
 			}

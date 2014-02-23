@@ -33,6 +33,7 @@ class EventMembers{
 			}
 			return $members;
 	}
+	
 	public function parse_next_string($next) {
 		$next_call=substr($next,26);
 		return $next_call;

@@ -24,11 +24,12 @@ class EventMembers{
 			echo "uh oh";
 			$call=$this->facebook->api('/'.$this->eid.'/attending/');
 			$members=$call['data'];
-			$next=$call['data']['next'];
-			while(  $next != null ) {
-				$call=$this->facebook->api($next);
-				$members=array_merge( $members,$call['data']['next'] );
-			}
+			$next=$call['paging']['next'];
+			// while(  $next != null ) {
+			// 	$call=$this->facebook->api($next);
+			// 	$members=array_merge( $members,$call['paging']['next'] );
+			// 	$next=$call['paging']['next'];
+			// }
 			return $members;
 	}
 

@@ -25,12 +25,12 @@ class EventMembers{
 			$members=$call['data'];
 			$next=$call['paging']['next'];
 			$next_call=$this->parse_next_string($next);
-			echo $next_call;
-			// while(  $next != null ) {
-			// 	$call=$this->facebook->api($next);
-			// 	$members=array_merge( $members,$call['paging']['next'] );
-			// 	$next=$call['paging']['next'];
-			// }
+			// echo $next_call;
+			while(  $next_call != null ) {
+				$call=$this->facebook->api($next_call);
+				$members=array_merge( $members,$call['paging']['next'] );
+				$next_call=$this->parse_next_string($call['paging']['next']);
+			}
 			return $members;
 	}
 	public function parse_next_string($next) {

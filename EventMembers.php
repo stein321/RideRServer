@@ -3,12 +3,12 @@ require_once('vendor/facebook/php-sdk/src/facebook.php');
 
 class EventMembers{
 	private $facebook;
+	private $eid;
 
-	public function __construct() {
+	public function __construct($eid) {
 		$this->secret_key="f57c5b006bae8c63bc170578bd582589";
 			$this->app_id="436860186416914";
-			$this->$id=$id;
-			echo $id;
+			$this->eid=$eid;
 			$config=array(
 				'appId' => $this->app_id,
 			     'secret' => $this->secret_key,
@@ -18,7 +18,7 @@ class EventMembers{
 			$this->facebook=new facebook($config);
 	}
 	public function get_all_event_members() {
-			$call=$this->facebook->api('/'.$event_id.'/attending/');
+			$call=$this->facebook->api('/'.$this->eid.'/attending/');
 			$members=$call['data'];
 			$next=$call['next'];
 			while(  $next != null ) {

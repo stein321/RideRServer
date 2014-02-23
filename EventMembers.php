@@ -21,7 +21,6 @@ class EventMembers{
 			$this->facebook=new facebook($config);
 	}
 	public function get_all_event_members() {
-			echo "uh oh";
 			$call=$this->facebook->api('/'.$this->eid.'/attending/');
 			$members=$call['data'];
 			// $next=$call['paging']['next'];

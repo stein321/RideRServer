@@ -41,24 +41,24 @@ class Get_Friends{
 	public function get_user() {
 		return $this->facebook->getUser();
 	}
-	// public function get_friends() {
-	// 	$eid="1452625398292441";
+	public function get_friends() {
+		$eid="1452625398292441";
 
-	// 	$friends=$this->facebook->api( array(
- //                         'method' => 'fql.query',
- //                         'query' => "SELECT name,mutual_friend_count,uid FROM user WHERE uid IN(
-	// 												SELECT uid FROM event_member WHERE eid = $eid AND rsvp_status = 'attending'
-	// 												) AND mutual_friend_count > 0 ORDER BY mutual_friend_count desc",
- //                     ));
+		$friends=$this->facebook->api( array(
+                         'method' => 'fql.query',
+                         'query' => "SELECT name,mutual_friend_count,uid FROM user WHERE uid IN(
+													SELECT uid FROM event_member WHERE eid = $eid AND rsvp_status = 'attending'
+													) AND mutual_friend_count > 0 ORDER BY mutual_friend_count desc",
+                     ));
 
-	// 	// $friends=$this->facebook->api(
-	// 	// 	'/fql?q='.
-	// 	// );	
-	// 	var_dump($friends);
+		// $friends=$this->facebook->api(
+		// 	'/fql?q='.
+		// );	
+		var_dump($friends);
 
-	// 	// $this->friend_ids=$this->process_friend_ids($friends['data']);
-	// 	return $friends;
-	// }
+		// $this->friend_ids=$this->process_friend_ids($friends['data']);
+		return $friends;
+	}
 	// public function process_friend_ids($friends) {
 	// 	$friend_ids=[];
 

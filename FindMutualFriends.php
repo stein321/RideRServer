@@ -31,7 +31,9 @@ class FindMutualFriends {
 			if($call) {
 				$count=count($call['data']);
 				if($count>0) {
-					$this->friend_array[]=new Friend($member['name'],$member['id'],$count);
+					$photo_call=new FacebookPhotos($member['id']);
+					$url=$photo_call->get_urL_from_id();
+					$this->friend_array[]=new Friend($member['name'],$member['id'],$count,$url['call']['url']);
 				}
 				// var_dump($call);
 			}

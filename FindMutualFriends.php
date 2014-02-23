@@ -31,7 +31,7 @@ class FindMutualFriends {
 			if($call) {
 				$count=count($call);
 				if($count>0) {
-					$this->friend_array[]=new Friend($member->name,$member->id,$count);
+					$this->friend_array[]=new Friend($member['name'],$member['id'],$count);
 				}
 				// var_dump($call);
 			}

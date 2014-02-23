@@ -9,6 +9,7 @@ class FindMutualFriends {
 	private $secret_key;
 	private $app_id;
 	public 	$friend_array;
+	public 	$sorted_friend_array;
 
 	public function __construct($members) {
 		$this->members=$members;
@@ -37,7 +38,13 @@ class FindMutualFriends {
 			}
 		}
 		var_dump($this->friend_array);
+		usort($this->friend_array, cmp);
+		return $this->friend_array;
 
+	}
+	public function cmp($a,$b)
+	{
+		return ($a->count > $b->count);
 	}
 
 

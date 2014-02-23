@@ -18,5 +18,5 @@ $eid = "1459514514266526";
 $event=new EventMembers($eid);
 $members=$event->get_all_event_members();
 $mutual_friend=new FindMutualFriends($members);
-$mutual_friend->find_mutual_friends();
-// var_dump($members);
+$friends_array=$mutual_friend->find_mutual_friends();
+var_dump($friends_array);

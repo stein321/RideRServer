@@ -14,9 +14,9 @@ $id=$_GET['id'];
 //$facebook=new Get_Friends($id);
 // $friends=$facebook->get_friends();
 //var_dump($friends);
-
-$event=new EventMembers("1459514514266526");
 $echo("here");
+$event=new EventMembers("1459514514266526");
+
 die();
 $members=$event->get_all_event_members();
 //$mutual_friend=new FindMutualFriends($members);

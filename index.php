@@ -4,7 +4,7 @@
 
 require_once('vendor/facebook/php-sdk/src/facebook.php');
 include_once('getFriends.php');
-include_once('EventMembers.php');
+// include_once('EventMembers.php');
 $secret="f57c5b006bae8c63bc170578bd582589";
 $app_id="436860186416914";
 

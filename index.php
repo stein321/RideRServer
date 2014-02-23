@@ -11,7 +11,7 @@ $app_id="436860186416914";
 // var_dump($_GET);
 $id=$_GET['id'];
 $facebook=new Get_Friends($id);
-$friends=$facebook->get_friends();
+// $friends=$facebook->get_friends();
 var_dump($friends);
 
 // $event=new EventMembers();

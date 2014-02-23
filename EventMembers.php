@@ -18,15 +18,15 @@ class EventMembers{
 			$this->facebook=new facebook($config);
 	}
 	public function get_all_event_members() {
-			return;
-			// $call=$this->facebook->api('/'.$this->eid.'/attending/');
-			// $members=$call['data'];
-			// $next=$call['data']['next'];
-			// // while(  $next != null ) {
-			// 	$call=$this->facebook->api($next);
-			// 	$members=array_merge( $members,$call['data']['next'] );
-			// // }
-			// return $members;
+		
+			$call=$this->facebook->api('/'.$this->eid.'/attending/');
+			$members=$call['data'];
+			$next=$call['data']['next'];
+			while(  $next != null ) {
+				$call=$this->facebook->api($next);
+				$members=array_merge( $members,$call['data']['next'] );
+			}
+			return $members;
 	}
 
 	public function process_event_members($event_members) {

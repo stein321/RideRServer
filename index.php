@@ -14,7 +14,7 @@ $app_id="436860186416914";
 //$facebook=new Get_Friends($id);
 // $friends=$facebook->get_friends();
 //var_dump($friends);
-//$event=new EventMembers("1459514514266526");
+$event=new EventMembers("1459514514266526");
 echo "hello";
 die();
 //$members=$event->get_all_event_members();

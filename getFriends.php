@@ -59,15 +59,15 @@ class Get_Friends{
 	// 	// $this->friend_ids=$this->process_friend_ids($friends['data']);
 	// 	return $friends;
 	// }
-	public function process_friend_ids($friends) {
-		$friend_ids=[];
+	// public function process_friend_ids($friends) {
+	// 	$friend_ids=[];
 
-		foreach ($friends as $key => $friend) {
+	// 	foreach ($friends as $key => $friend) {
 
-			$friend_ids[]=$friend['id'];
-		}
-		return $friend_ids;
-	}
+	// 		$friend_ids[]=$friend['id'];
+	// 	}
+	// 	return $friend_ids;
+	// }
 
 
 

@@ -1,7 +1,7 @@
 <?php
 
 require_once('vendor/facebook/php-sdk/src/facebook.php');
-require_once('Friend.php');
+// require_once('Friend.php');
 
 class FindMutualFriends {
 	private $members;

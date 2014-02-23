@@ -1,11 +1,14 @@
 <?php
+
 require_once('vendor/facebook/php-sdk/src/facebook.php');
+require_once('Friend.php');
+
 class FindMutualFriends {
 	private $members;
 	private $facebook;
 	private $secret_key;
 	private $app_id;
-
+	public 	$friend_array;
 
 	public function __construct($members) {
 		$this->members=$members;
@@ -19,8 +22,11 @@ class FindMutualFriends {
 			     'allowSignedRequest' => true,
 			);
 			$this->facebook=new facebook($config);
+			$friend_array=[];
 	}
+	public function find_mutual_friends() {
 
+	}
 
 
 }

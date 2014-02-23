@@ -8,9 +8,9 @@ class EventMembers{
 	private $app_id;
 
 	public function __construct($eid) {
-			$this->secret_key="f57c5b006bae8c63bc170578bd582589";
-			$this->app_id="436860186416914";
-			$this->eid=$eid;
+			// $this->secret_key="f57c5b006bae8c63bc170578bd582589";
+			// $this->app_id="436860186416914";
+			// $this->eid=$eid;
 			// $config=array(
 			// 	'appId' => $this->app_id,
 			//      'secret' => $this->secret_key,

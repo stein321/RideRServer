@@ -3,7 +3,7 @@
 
 require_once('vendor/facebook/php-sdk/src/facebook.php');
 include_once('getFriends.php');
-include_once('EventMembers.php');
+//include_once('EventMembers.php');
 include_once('FindMutualFriends.php');
 
 $secret="f57c5b006bae8c63bc170578bd582589";
@@ -17,6 +17,6 @@ $id=$_GET['id'];
 
 $event=new EventMembers("1459514514266526");
 $members=$event->get_all_event_members();
-$mutual_friend=new FindMutualFriends($members);
+//$mutual_friend=new FindMutualFriends($members);
 //$mutual_friend->find_mutual_friends();
 var_dump($members);

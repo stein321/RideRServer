@@ -25,10 +25,10 @@ class EventMembers{
 			$call=$this->facebook->api('/'.$this->eid.'/attending/');
 			$members=$call['data'];
 			$next=$call['data']['next'];
-			// while(  $next != null ) {
+			while(  $next != '' ) {
 				$call=$this->facebook->api($next);
 				$members=array_merge( $members,$call['data']['next'] );
-			// }
+			}
 			return $members;
 	}
 

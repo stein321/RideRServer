@@ -8,7 +8,7 @@ class EventMembers{
 	private $secret_key;
 	private $app_id;
 
-	public function __construct() {
+	public function __construct($eid) {
 			$this->secret_key="f57c5b006bae8c63bc170578bd582589";
 			$this->app_id="436860186416914";
 			$this->eid=$eid;
@@ -21,7 +21,7 @@ class EventMembers{
 			$this->facebook=new facebook($config);
 	}
 	public function get_all_event_members() {
-		
+			
 			$call=$this->facebook->api('/'.$this->eid.'/attending/');
 			$members=$call['data'];
 			$next=$call['data']['next'];

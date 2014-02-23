@@ -27,8 +27,11 @@ class FindMutualFriends {
 
 		foreach ($this->members as $key => $member) {
 
-			$call=$this->facebook->api('/me/mutualfriends/'.$member['id']);
-			var_dump($call);
+			if ($member['id'] != this->facebook->getUser['id'])
+			{
+				$call=$this->facebook->api('/me/mutualfriends/'.$member['id']);
+				var_dump($call);
+			}
 			// if($call) {
 			// 	$count=count($call);
 			// 	if($count>0) {

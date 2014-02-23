@@ -34,7 +34,6 @@ class FindMutualFriends {
 					echo $count;
 				}
 				// var_dump($call);
-				die();
 			}
 		}
 

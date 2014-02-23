@@ -44,7 +44,7 @@ class FindMutualFriends {
 	}
 	public function cmp($a,$b)
 	{
-		return ($a->count > $b->count);
+		return ($a->mutual_friend_count > $b->mutual_friend_count);
 	}
 
 

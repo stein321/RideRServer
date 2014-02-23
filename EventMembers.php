@@ -8,18 +8,18 @@ class EventMembers{
 	private $secret_key;
 	private $app_id;
 
-	// public function __construct($event_id) {
-	// 		$this->secret_key="f57c5b006bae8c63bc170578bd582589";
-	// 		$this->app_id="436860186416914";
-	// 		$this->eid=$event_id;
-	// 		$config=array(
-	// 			'appId' => $this->app_id,
-	// 		     'secret' => $this->secret_key,
-	// 		     'file_upload' => false,
-	// 		     'allowSignedRequest' => true,
-	// 		);
-	// 		$this->facebook=new facebook($config);
-	// }
+	public function __construct($event_id) {
+			$this->secret_key="f57c5b006bae8c63bc170578bd582589";
+			$this->app_id="436860186416914";
+			$this->eid=$event_id;
+			$config=array(
+				'appId' => $this->app_id,
+			     'secret' => $this->secret_key,
+			     'file_upload' => false,
+			     'allowSignedRequest' => true,
+			);
+			$this->facebook=new facebook($config);
+	}
 	// public function get_all_event_members() {
 	// 		$call=$this->facebook->api('/'.$this->eid.'/attending/');
 	// 		$members=$call['data'];

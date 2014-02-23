@@ -23,9 +23,9 @@ class FindMutualFriends {
 			$this->facebook=new facebook($config);
 			$this->friend_array=[];
 	}
-	public function find_mutual_friends() {
+	// public function find_mutual_friends() {
 
-	}
+	// }
 
 
 }

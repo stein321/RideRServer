@@ -13,7 +13,7 @@ class Get_Friends{
 			$this->secret_key="f57c5b006bae8c63bc170578bd582589";
 			$this->app_id="436860186416914";
 			$this->$id=$id;
-			
+			echo $id;
 			$config=array(
 				'appId' => $this->app_id,
 			     'secret' => $this->secret_key,
@@ -31,9 +31,17 @@ class Get_Friends{
 	public function get_friends() {
 		$friends=$this->facebook->api(
 		'/'.$this->get_user().'/friends'
-		);
-		
-		return $friends;
+		);	
+		$friend_ids=$this->process_friend_ids($friends['data']);
+		return $friend_ids;
+	}
+	public function process_friend_ids($friends) {
+		$friend_ids=[];
+
+		foreach ($friends as $key => $friend) {
+			$friend_ids[]=$friend['id'];
+		}
+		return $friend_ids;
 	}
 
 

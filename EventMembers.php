@@ -21,10 +21,12 @@ class EventMembers{
 			$this->facebook=new facebook($config);
 	}
 	public function get_all_event_members() {
+			$next_call=null;
 			$call=$this->facebook->api('/'.$this->eid.'/attending/');
 			$members=$call['data'];
 			$next=$call['paging']['next'];
-			$next_call=$this->parse_next_string($next);
+			if($next != null)
+				$next_call=$this->parse_next_string($next);
 			// echo $next_call;
 			while(  $next_call != null ) {
 				$call=$this->facebook->api($next_call);

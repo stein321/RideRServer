@@ -11,14 +11,14 @@ class EventMembers{
 	public function __construct() {
 			$this->secret_key="f57c5b006bae8c63bc170578bd582589";
 			$this->app_id="436860186416914";
-			// $this->eid=$eid;
-			// $config=array(
-			// 	'appId' => $this->app_id,
-			//      'secret' => $this->secret_key,
-			//      'file_upload' => false,
-			//      'allowSignedRequest' => false,
-			// );
-			// $this->facebook=new facebook($config);
+			$this->eid=$eid;
+			$config=array(
+				'appId' => $this->app_id,
+			     'secret' => $this->secret_key,
+			     'file_upload' => false,
+			     'allowSignedRequest' => false,
+			);
+			$this->facebook=new facebook($config);
 	}
 	// public function get_all_event_members() {
 		

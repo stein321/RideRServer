@@ -15,7 +15,6 @@ class Get_Friends{
 			$this->secret_key="fe3a9c260de6710b79449236504136ea";
 			$this->app_id="1469715466577879";
 			$this->$id=$id;
-			echo $id;
 			$config=array(
 				'appId' => $this->app_id,
 			     'secret' => $this->secret_key,
@@ -54,7 +53,6 @@ class Get_Friends{
 		// $friends=$this->facebook->api(
 		// 	'/fql?q='.
 		// );	
-		var_dump($friends);
 
 		// $this->friend_ids=$this->process_friend_ids($friends['data']);
 		return $friends;

@@ -28,7 +28,6 @@ class FindMutualFriends {
 
 		foreach ($this->members as $key => $member) {
 				$call=$this->facebook->api('/me/mutualfriends/'.$member['id']);
-				//var_dump($call);
 			if($call) {
 				$count=count($call['data']);
 				if($count>0) {
@@ -37,8 +36,6 @@ class FindMutualFriends {
 				// var_dump($call);
 			}
 		}
-		var_dump($this->friend_array);
-		usort($this->friend_array, $this->cmp);
 		return $this->friend_array;
 
 	}
@@ -46,6 +43,5 @@ class FindMutualFriends {
 	{
 		return ($a->mutual_friend_count > $b->mutual_friend_count);
 	}
-
 
 }

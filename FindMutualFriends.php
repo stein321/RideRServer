@@ -30,7 +30,7 @@ class FindMutualFriends {
 				$call=$this->facebook->api('/me/mutualfriends/'.$member['id']);
 				//var_dump($call);
 			if($call) {
-				$count=count($call);
+				$count=count($call['data']);
 				if($count>0) {
 					$this->friend_array[]=new Friend($member['name'],$member['id'],$count);
 				}

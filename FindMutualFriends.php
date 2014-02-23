@@ -38,7 +38,7 @@ class FindMutualFriends {
 			}
 		}
 		var_dump($this->friend_array);
-		usort($this->friend_array, cmp);
+		usort($this->friend_array, $this->cmp);
 		return $this->friend_array;
 
 	}

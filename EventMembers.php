@@ -35,30 +35,4 @@ class EventMembers{
 			$call=$this->facebook->api('/'.$member['id']./'mutualfriends')
 		}
 	}
-
-
-
-    /**
-     * Gets the value of facebook.
-     *
-     * @return mixed
-     */
-    public function getFacebook()
-    {
-        return $this->facebook;
-    }
-    
-    /**
-     * Sets the value of facebook.
-     *
-     * @param mixed $facebook the facebook
-     *
-     * @return self
-     */
-    public function setFacebook($facebook)
-    {
-        $this->facebook = $facebook;
-
-        return $this;
-    }
 }

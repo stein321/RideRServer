@@ -31,11 +31,12 @@ class FindMutualFriends {
 			if($call) {
 				$count=count($call);
 				if($count>0) {
-					echo $count." ";
+					$this->friend_array[]=new Friend($member->name,$member->id,$count);
 				}
 				// var_dump($call);
 			}
 		}
+		var_dump($this->friend_array);
 
 	}
 

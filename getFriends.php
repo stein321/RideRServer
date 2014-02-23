@@ -53,6 +53,7 @@ class Get_Friends{
 		// $friends=$this->facebook->api(
 		// 	'/fql?q='.
 		// );	
+		var_dump($friends);
 
 		// $this->friend_ids=$this->process_friend_ids($friends['data']);
 		return $friends;

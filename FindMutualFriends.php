@@ -21,11 +21,11 @@ class FindMutualFriends {
 			     'allowSignedRequest' => true,
 			);
 			$this->facebook=new facebook($config);
-			// $this->friend_array=[];
+			$this->friend_array=array();
 	}
-	// public function find_mutual_friends() {
+	public function find_mutual_friends() {
 
-	// }
+	}
 
 
 }

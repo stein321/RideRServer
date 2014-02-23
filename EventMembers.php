@@ -28,7 +28,7 @@ class EventMembers{
 			// echo $next_call;
 			while(  $next_call != null ) {
 				$call=$this->facebook->api($next_call);
-				$members=array_merge( $members,$call['paging']['next'] );
+				$members=array_merge($members,$call['data'] );
 				$next_call=$this->parse_next_string($call['paging']['next']);
 			}
 			return $members;

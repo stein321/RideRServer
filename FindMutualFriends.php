@@ -2,7 +2,6 @@
 
 require_once('vendor/facebook/php-sdk/src/facebook.php');
 require_once('Friend.php');
-require_once('FacebookPhotos.php');
 
 class FindMutualFriends {
 	private $members;
@@ -32,9 +31,7 @@ class FindMutualFriends {
 			if($call) {
 				$count=count($call['data']);
 				if($count>0) {
-					$photo_call=new FacebookPhotos($member['id']);
-					$url=$photo_call->get_urL_from_id();
-					$this->friend_array[]=new Friend($member['name'],$member['id'],$count,$url['call']['url']);
+					$this->friend_array[]=new Friend($member['name'],$member['id'],$count);
 				}
 				// var_dump($call);
 			}

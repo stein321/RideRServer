@@ -1,4 +1,5 @@
 <?php
+
 require_once('vendor/facebook/php-sdk/src/facebook.php');
 
 class EventMembers{
@@ -7,7 +8,7 @@ class EventMembers{
 	private $secret_key;
 	private $app_id;
 
-	public function __construct($eid) {
+	public function __construct() {
 			// $this->secret_key="f57c5b006bae8c63bc170578bd582589";
 			// $this->app_id="436860186416914";
 			// $this->eid=$eid;

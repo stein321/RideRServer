@@ -15,7 +15,7 @@ $facebook=new Get_Friends($id);
 //var_dump($friends);
 
 $event=new EventMembers();
-$members=$event->get_all_event_members();
-var_dump($members);
+// $members=$event->get_all_event_members();
+// var_dump($members);
 
 

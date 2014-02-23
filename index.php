@@ -16,6 +16,8 @@ $facebook=new Get_Friends($id);
 //var_dump($friends);
 
 $event=new EventMembers("1459514514266526");
+var_dump($event);
+die();
 $members=$event->get_all_event_members();
 // $mutual_friend=new FindMutualFriends($members);
 //$mutual_friend->find_mutual_friends();

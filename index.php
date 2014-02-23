@@ -21,4 +21,4 @@ $mutual_friend=new FindMutualFriends($members);
 $friends_array=$mutual_friend->find_mutual_friends();
 usort($friends_array, $mutual_friend->cmp);
 // echo $friends_array;
-$_GET['data']= json_encode($friends_array);
+echo json_encode($friends_array);

@@ -14,9 +14,9 @@ $facebook=new Get_Friends($id);
 // $friends=$facebook->get_friends();
 //var_dump($friends);
 
-// $event=new EventMembers("1452625398292441");
+$event=new EventMembers("1452625398292441");
 echo "boom2";
-// $members=$event->get_all_event_members();
-// var_dump($members);
+$members=$event->get_all_event_members();
+var_dump($members);
 
 

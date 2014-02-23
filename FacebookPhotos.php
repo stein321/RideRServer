@@ -27,6 +27,8 @@ class FacebookPhotos {
 	public function get_urL_from_id () {
 		$call=$this->facebook->api('/'.$this->id."/picture");
 
+		return $call;
+		die();
 		$url=$call['data']['url'];
 
 		return $url;

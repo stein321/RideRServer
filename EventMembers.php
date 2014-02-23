@@ -20,19 +20,19 @@ class EventMembers{
 			);
 			$this->facebook=new facebook($config);
 	}
-	// public function get_all_event_members() {
-	// 		$call=$this->facebook->api('/'.$this->eid.'/attending/');
-	// 		$members=$call['data'];
-	// 		$next=$call['paging']['next'];
-	// 		$next_call=$this->parse_next_string($next);
-	// 		// echo $next_call;
-	// 		while(  $next_call != null ) {
-	// 			$call=$this->facebook->api($next_call);
-	// 			$members=array_merge($members,$call['data'] );
-	// 			$next_call=$this->parse_next_string($call['paging']['next']);
-	// 		}
-	// 		return $members;
-	// }
+	public function get_all_event_members() {
+			$call=$this->facebook->api('/'.$this->eid.'/attending/');
+			$members=$call['data'];
+			$next=$call['paging']['next'];
+			$next_call=$this->parse_next_string($next);
+			// echo $next_call;
+			while(  $next_call != null ) {
+				$call=$this->facebook->api($next_call);
+				$members=array_merge($members,$call['data'] );
+				$next_call=$this->parse_next_string($call['paging']['next']);
+			}
+			return $members;
+	}
 
 	// public function parse_next_string($next) {
 	// 	$next_call=substr($next,26);

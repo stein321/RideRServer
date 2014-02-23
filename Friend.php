@@ -12,5 +12,4 @@ class Friend {
 		$this->id=$id;
 		$this->mutual_friend_count=$count;
 	}
-
 }

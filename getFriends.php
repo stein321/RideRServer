@@ -9,6 +9,8 @@ class Get_Friends{
 	private $app_id;
 	private $facebook;
 	private $id;
+	private $friend_ids;
+
 	public function __construct($id){
 			$this->secret_key="f57c5b006bae8c63bc170578bd582589";
 			$this->app_id="436860186416914";
@@ -24,30 +26,50 @@ class Get_Friends{
 	}
 
 
+	public function get_a_users_friends($id) {
+		$user=$this->facebook->api('/'.$id);
+		$ids=get_users_ids_from_user($user);
+		return $ids;
+	}
+	public function get_users_ids_from_user($user) {
+		$friends=$this->facebook->api(
+		'/'.$user.'/friends'	
+			);
+		return 0; 
+	}
 
 	public function get_user() {
 		return $this->facebook->getUser();
 	}
 	public function get_friends() {
-		$friends=$this->facebook->api(
-		'/'.$this->get_user().'/friends'
-		);	
-		$friend_ids=$this->process_friend_ids($friends['data']);
-		return $friend_ids;
+		$eid="1452625398292441";
+
+		$friends=$this->facebook->api( array(
+                         'method' => 'fql.query',
+                         'query' => "SELECT name,mutual_friend_count,uid FROM user WHERE uid IN(
+													SELECT uid FROM event_member WHERE eid = $eid AND rsvp_status = 'attending'
+													) AND mutual_friend_count > 0 ORDER BY mutual_friend_count desc",
+                     ));
+
+		// $friends=$this->facebook->api(
+		// 	'/fql?q='.
+		// );	
+		var_dump($friends);
+
+		// $this->friend_ids=$this->process_friend_ids($friends['data']);
+		return $friends;
 	}
 	public function process_friend_ids($friends) {
 		$friend_ids=[];
 
 		foreach ($friends as $key => $friend) {
+
 			$friend_ids[]=$friend['id'];
 		}
 		return $friend_ids;
 	}
 
 
-// echo "hello";
-// echo var_dump($uid);
 
-// echo var_dump($facebook);
 }
 

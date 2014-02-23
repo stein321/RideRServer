@@ -20,30 +20,24 @@ class EventMembers{
 			);
 			$this->facebook=new facebook($config);
 	}
-	public function get_all_event_members() {
-			$call=$this->facebook->api('/'.$this->eid.'/attending/');
-			$members=$call['data'];
-			$next=$call['paging']['next'];
-			$next_call=$this->parse_next_string($next);
-			// echo $next_call;
-			while(  $next_call != null ) {
-				$call=$this->facebook->api($next_call);
-				$members=array_merge($members,$call['data'] );
-				$next_call=$this->parse_next_string($call['paging']['next']);
-			}
-			return $members;
-	}
-	
-	public function parse_next_string($next) {
-		$next_call=substr($next,26);
-		return $next_call;
+	// public function get_all_event_members() {
+	// 		$call=$this->facebook->api('/'.$this->eid.'/attending/');
+	// 		$members=$call['data'];
+	// 		$next=$call['paging']['next'];
+	// 		$next_call=$this->parse_next_string($next);
+	// 		// echo $next_call;
+	// 		while(  $next_call != null ) {
+	// 			$call=$this->facebook->api($next_call);
+	// 			$members=array_merge($members,$call['data'] );
+	// 			$next_call=$this->parse_next_string($call['paging']['next']);
+	// 		}
+	// 		return $members;
+	// }
 
-	}
-	// public function process_event_members($event_members) {
-	// 	foreach ($event_members as $key => $member) {
-	// 		//going to be a query
-	// 		$call=$this->facebook->api('/'.$member['id']./'mutualfriends')
-	// 	}
+	// public function parse_next_string($next) {
+	// 	$next_call=substr($next,26);
+	// 	return $next_call;
+
 	// }
 
     

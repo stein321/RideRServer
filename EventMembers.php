@@ -24,14 +24,14 @@ class EventMembers{
 			$call=$this->facebook->api('/'.$this->eid.'/attending/');
 			$members=$call['data'];
 			$next=$call['paging']['next'];
-			// if (next != null)
-			// 	$next_call=$this->parse_next_string($next);
-			// // echo $next_call;
-			// while(  $next_call != null ) {
-			// 	$call=$this->facebook->api($next_call);
-			// 	$members=array_merge($members,$call['data'] );
-			// 	$next_call=$this->parse_next_string($call['paging']['next']);
-			// }
+			if ($next != null)
+				$next_call=$this->parse_next_string($next);
+			// echo $next_call;
+			while(  $next_call != null ) {
+				$call=$this->facebook->api($next_call);
+				$members=array_merge($members,$call['data'] );
+				$next_call=$this->parse_next_string($call['paging']['next']);
+			}
 			return $members;
 	}
 
